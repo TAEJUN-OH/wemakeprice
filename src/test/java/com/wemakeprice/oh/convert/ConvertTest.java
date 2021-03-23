@@ -23,9 +23,11 @@ public class ConvertTest {
 
         String expectation = "First parse Parsed HTML into a doc.";
 
+
         //when
         Document doc = Jsoup.parse(html);
         String result = doc.text();
+
 
         //then
         Assertions.assertEquals(result, expectation , "Html 태그가 제외되어야 한다");
