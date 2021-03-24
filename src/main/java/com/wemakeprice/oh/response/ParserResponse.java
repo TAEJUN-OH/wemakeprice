@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @AllArgsConstructor
-public class ParseResponse {
+public class ParserResponse {
     private String quotient;
     private String rest;
 

@@ -1,11 +1,11 @@
-package com.wemakeprice.oh.convert;
+package com.wemakeprice.oh.parser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-public class ConvertTest {
+public class ParsingTest {
 
     @Test
     public void HTML태그제외() {
