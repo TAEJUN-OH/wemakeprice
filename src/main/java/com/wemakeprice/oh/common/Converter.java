@@ -80,34 +80,34 @@ public class Converter {
         List result = new ArrayList<>();
         StringBuilder quotient = new StringBuilder(); //몫
         String rest = ""; //나머지
-        String bundle = "";
+        StringBuilder bundle = new StringBuilder();
 
         int maxSize = num.length() > str.length() ? num.length() : str.length();
 
         for(int i=0;i<maxSize;i++) {
             //영문
             if(str.length() > i) {
-                bundle += (Character.toString(str.charAt(i)));
+                bundle.append(str.charAt(i));
 
                 if(bundle.length() == input) {
                     quotient.append(bundle);
-                    bundle = "";
+                    bundle.setLength(0);
                 }
             }
 
             //숫자
             if(num.length() > i) {
-                bundle += (Character.toString(num.charAt(i)));
+                bundle.append(num.charAt(i));
 
                 if(bundle.length() == input) {
                     quotient.append(bundle);
-                    bundle = "";
+                    bundle.setLength(0);
                 }
             }
 
             //나머지
             if(i == maxSize-1) {
-                rest = bundle;
+                rest = bundle.toString();
             }
         }
         result.add(0, quotient.toString());

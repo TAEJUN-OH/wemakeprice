@@ -19,7 +19,8 @@ public class MergingTest {
         //when
         StringBuilder quotient = new StringBuilder(); // 몫
         String rest = ""; //나머지
-        String bundle = ""; //출력묶음
+//        String bundle = ""; //출력묶음
+        StringBuilder bundle = new StringBuilder();
 
         int maxSize = num.length() > str.length() ? num.length() : str.length();
 
@@ -27,31 +28,38 @@ public class MergingTest {
 
             //영문출력값
             if(str.length() > i) {
-                bundle += (Character.toString(str.charAt(i)));
+//                bundle += (str.charAt(i));
+
+                bundle.append(str.charAt(i));
 
                 if(bundle.length() == input) {
                     quotient.append(bundle);
-                    bundle = "";
+//                    bundle = "";
+                    bundle.setLength(0);
                 }
             }
 
             //숫자출력값
             if(num.length() > i) {
-                bundle += (Character.toString(num.charAt(i)));
+//                bundle += (num.charAt(i));
+
+                bundle.append(num.charAt(i));
 
                 if(bundle.length() == input) {
                     quotient.append(bundle);
-                    bundle = "";
+//                    bundle = "";
+                    bundle.setLength(0);
                 }
             }
 
             //나머지
             if(i == maxSize-1) {
-                rest = bundle;
+                rest = bundle.toString();
+
+//                rest = bundle;
             }
         }
         String result = quotient.toString();
-
 
         //then
         Assertions.assertEquals(result , QuoExpectation , "몫");
